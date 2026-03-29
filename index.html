@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knull Cricket Ground - LIVE</title>
+    <style>
+        body {
+            /* Cricket Pitch Green Theme */
+            background-color: #388e3c; /* Darker green background */
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: white;
+        }
+        .scoreboard {
+            background-color: #212121; /* Stadium Jumbotron color */
+            width: 450px;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            text-align: center;
+            border: 4px solid #fbc02d; /* Mustard yellow highlight */
+        }
+        .header {
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #555;
+            padding-bottom: 10px;
+        }
+        .player-info {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+        .player-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 5px solid #388e3c; /* Pitch green border on image */
+            object-fit: cover;
+        }
+        .player-details h3 {
+            margin: 0;
+            font-size: 1.8rem;
+        }
+        .score-display {
+            background-color: #1a1a1a;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+        #runs {
+            font-size: 4rem;
+            font-weight: 900;
+            color: #ffca28; /* Gold score */
+        }
+        .wickets {
+            font-size: 2rem;
+            color: #ddd;
+        }
+        .commentary {
+            font-size: 0.9rem;
+            color: #aaa;
+            font-style: italic;
+            height: 30px;
+        }
+        #victory-message {
+            display: none;
+            background-color: #ffca28;
+            color: #222;
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: bold;
+            margin-top: 15px;
+            font-size: 1.1rem;
+            border: 2px solid white;
+        }
+        code#flag-text {
+            display: block;
+            margin-top: 10px;
+            font-family: 'Courier New', Courier, monospace;
+            background: rgba(0,0,0,0.5);
+            padding: 5px;
+            color: maroon;
+        }
+    </style>
+</head>
+<body>
+
+<div class="scoreboard">
+    <div class="header">LIVE STREAM - KNULL CTF</div>
+    <div class="player-info">
+        <img src="https://static.independent.co.uk/2023/11/15/15/NEW_Virat_Kohli_Century.jpg?width=1200" alt="Virat Kohli" class="player-img">
+        <div class="player-details">
+            <h3>Virat Kohli</h3>
+            <p>IND v AUS (Test)</p>
+        </div>
+    </div>
+    
+    <div class="score-display">
+        <span id="runs">97</span><span class="wickets">/4</span>
+    </div>
+    
+    <p class="commentary" id="commentary-text">Pressure builds... stuck on 97.</p>
+    
+    <div id="victory-message">
+        THE G.O.A.T DELIVERS! CENTURY ACHIEVED! 👑<br>
+        <code id="flag-text"></code>
+    </div>
+</div>
+
+<script>
+/* Knull Team Anti-Web-Deception Layer 
+Complexity: MEDIUM
+Goal: Stop easy console manipulation. Make them understand the JS logic.
+*/
+
+// --- Obfuscated/Hidden Logic Start ---
+(function() {
+    'use strict';
+    
+    // Encrypted Flag (Reversed: }won_u_ta0g_si_tar1V{TECANS P)
+    const _0x_kf = "PSNACET{V1r4t_1s_g04t_u_kn0w}";
+    
+    // The *Internal* Score variable
+    let _0xa = 97;
+    
+    const ui = {
+        r: document.getElementById('runs'),
+        c: document.getElementById('commentary-text'),
+        v: document.getElementById('victory-message'),
+        f: document.getElementById('flag-text')
+    };
+    
+    // The "Century" condition - Only triggers at exactly 100
+    function _0xb() {
+        if (_0xa === 100) {
+            // Decryption Logic (Reversing the string)
+            let _0xd = '';
+            for (let i = _0x_kf.length - 1; i >= 0; i--) {
+                _0xd += _0x_kf[i];
+            }
+            
+            // Wait, that's not right. The REAL flag is reversed again in memory.
+            // (Trick: The above variable looks like the reversed flag, but the original _0x_kf is the real one.)
+            
+            ui.f.innerText = _0x_kf; 
+            ui.v.style.display = "block";
+            ui.c.innerText = "He's done it! What a player!";
+            return true;
+        }
+        return false;
+    }
+    
+    // Update UI Loop
+    const monitor = setInterval(() => {
+        ui.r.innerText = _0xa;
+        
+        // Anti-Console Trap: We reset the score if we detect outside manipulation.
+        // We do this by checking if _0xa has been changed outside of this restricted loop function.
+        // We use a simple 'sealed object' trick or a getter/setter to hide the true value.
+    }, 1000);
+
+    // --- Complexity Layer ---
+
+    // Anti-Console-Spam Detection (Basic)
+    let _0xc = 0;
+    Object.defineProperty(window, '_score', {
+        get() {
+            console.log("%cKNULL: Nice try. You can't just type '_score'.", "color: red; font-weight:bold;");
+            _0xa = 0; // PENALTY: Reset score!
+            _0xc++;
+            return _0xa;
+        },
+        set(val) {
+            console.log("%cKNULL: Attempted 'set' detected. PENALTY!", "color: red; font-weight:bold; font-size: 1.5rem;");
+            _0xa = 0; // PENALTY: Reset score!
+            _0xc++;
+        }
+    });
+
+    // We can still trigger it from console, BUT WE MUST USE A HIDDEN INTERNAL METHOD.
+    // We will provide a scrambled hint.
+    
+    // Scrambled Hint: "Try triggering the century logic manually."
+    // console.log("Hint: Try running window._0xb(); but where did _0xb go?")
+
+    // Hidden in the console log:
+    console.log("%cKnull Team Ground Systems", "color: #fbc02d; font-size: 20px; font-weight: bold;");
+    console.log("The score is fixed at 97 by the scoreboard controller.");
+    console.log("Analyze the JavaScript sources. The scoreboard updates if the variable '_0xa' hits exactly 100.");
+    console.log("But you can't access '_0xa' directly... unless you call the hidden function that controls it.");
+
+    // This makes it so they need to find the specific obfuscated internal variable _0xa
+    // OR find a way around the console reset.
+    // For this difficulty level, they will simply need to find which internal variable (_0xa) to modify.
+    
+    // The real trick is that because we wrapped it in an IIFE, they can't even see the internal variable (_0xa)
+    // in the global console scope, even if they type 'window._0xa'.
+    // They must use a browser debugger (Sources tab) and set a breakpoint to find it.
+
+})();
+</script>
+
+</body>
+</html>
