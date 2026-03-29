@@ -5,45 +5,133 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Knull Cricket Ground - LIVE</title>
     <style>
-        body { background-color: #388e3c; font-family: sans-serif; margin: 0; display: flex; justify-content: center; align-items: center; height: 100vh; color: white; }
-        .scoreboard { background-color: #212121; width: 450px; padding: 30px; border-radius: 15px; text-align: center; border: 4px solid #fbc02d; box-shadow: 0 15px 35px rgba(0,0,0,0.6); }
-        .header { font-size: 1.4rem; font-weight: bold; margin-bottom: 25px; border-bottom: 1px solid #444; padding-bottom: 15px; color: #fbc02d; }
-        .player-img { width: 140px; height: 140px; border-radius: 50%; border: 5px solid #388e3c; object-fit: cover; margin-bottom: 15px; background-color: #333; }
-        #runs { font-size: 4.5rem; font-weight: 900; color: #fbc02d; }
-        .wickets { font-size: 2.5rem; color: #888; }
-        #victory-message { display: none; background-color: #fbc02d; color: #111; padding: 20px; border-radius: 10px; font-weight: bold; margin-top: 20px; }
-        code { display: block; margin-top: 10px; background: rgba(0,0,0,0.8); padding: 10px; color: #fff; border-radius: 5px; }
+        body {
+            background-color: #388e3c; 
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: white;
+            overflow: hidden;
+        }
+        .scoreboard {
+            background-color: #212121;
+            width: 450px;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+            text-align: center;
+            border: 4px solid #fbc02d;
+        }
+        .header {
+            font-size: 1.4rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+            border-bottom: 1px solid #444;
+            padding-bottom: 15px;
+            color: #fbc02d;
+        }
+        .player-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+        .player-img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            border: 5px solid #388e3c;
+            object-fit: cover;
+            margin-bottom: 15px;
+            background-color: #333;
+        }
+        .score-display {
+            background-color: #1a1a1a;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        #runs {
+            font-size: 4.5rem;
+            font-weight: 900;
+            color: #fbc02d;
+        }
+        .wickets {
+            font-size: 2.5rem;
+            color: #888;
+        }
+        #victory-message {
+            display: none;
+            background-color: #fbc02d;
+            color: #111;
+            padding: 20px;
+            border-radius: 10px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        code {
+            display: block;
+            margin-top: 10px;
+            font-family: 'Courier New', monospace;
+            background: rgba(0,0,0,0.8);
+            padding: 10px;
+            color: #fff;
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
+
 <div class="scoreboard">
     <div class="header">LIVE UPDATES - KNULL TEAM</div>
-    <img src="https://i.ibb.co/pPz5m5C/virat.jpg" alt="Virat Kohli" class="player-img">
-    <h3>Virat Kohli</h3>
-    <div style="background:#1a1a1a; padding:20px; border-radius:10px;">
+    <div class="player-info">
+        <img src="https://www.hindustantimes.com/ht-img/img/2023/11/15/1600x900/virat_kohli_1700045714241_1700045722334.jpg" alt="Virat Kohli" class="player-img">
+        <h3>Virat Kohli</h3>
+        <p style="color: #aaa;">IND v AUS (Test Match)</p>
+    </div>
+    
+    <div class="score-display">
         <span id="runs">97</span><span class="wickets">/4</span>
     </div>
-    <p id="commentary" style="color:#888; font-style:italic;">Pressure builds... stuck on 97.</p>
+    
+    <p id="commentary" style="color: #888; font-style: italic;">Stuck on 97... pressure is on!</p>
+    
     <div id="victory-message">
         KING KOHLI REIGNS! 👑<br>
         <code id="flag-text"></code>
     </div>
 </div>
+
 <script>
-    (function() {
-        let _0xs = 97;
-        const flag = "PSNACET{V1r4t_1s_g04t_u_kn0w}";
-        setInterval(() => {
-            document.getElementById('runs').innerText = _0xs;
-            if (_0xs >= 100) {
-                document.getElementById('flag-text').innerText = flag;
-                document.getElementById('victory-message').style.display = "block";
-                document.getElementById('commentary').innerText = "History made!";
-            }
-        }, 1000);
-        Object.defineProperty(window, 'score', { get() { _0xs = 0; return "Reset!"; }, set(v) { _0xs = 0; } });
-        console.log("%cKNULL TEAM SECURED", "color: #fbc02d; font-size: 25px; font-weight: bold;");
-    })();
+(function() {
+    'use strict';
+    let _0xs = 97;
+    const _0xf = "PSNACET{V1r4t_1s_g04t_u_kn0w}";
+    
+    setInterval(() => {
+        document.getElementById('runs').innerText = _0xs;
+        if (_0xs >= 100) {
+            document.getElementById('flag-text').innerText = _0xf; 
+            document.getElementById('victory-message').style.display = "block";
+            document.getElementById('commentary').innerText = "Century Completed! 👑";
+        }
+    }, 1000);
+
+    // If they try to check the score via 'score' in console, it resets.
+    Object.defineProperty(window, 'score', {
+        get() { _0xs = 0; return "Access Denied - Score Reset!"; },
+        set(v) { _0xs = 0; }
+    });
+
+    console.log("%cKNULL TEAM SECURED", "color: #fbc02d; font-size: 25px; font-weight: bold;");
+    console.log("Analyze the source to find the private variable controlling the score.");
+})();
 </script>
+
 </body>
 </html>
