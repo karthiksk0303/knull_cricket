@@ -6,8 +6,9 @@
     <title>Knull Cricket Ground - LIVE</title>
     <style>
         body {
-            background-color: #388e3c; 
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #2e7d32; /* Pitch Green */
+            background-image: radial-gradient(circle, #388e3c 20%, #1b5e20 80%);
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             margin: 0;
             display: flex;
             justify-content: center;
@@ -17,120 +18,127 @@
             overflow: hidden;
         }
         .scoreboard {
-            background-color: #212121;
-            width: 450px;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+            background-color: #121212;
+            width: 420px;
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.8);
             text-align: center;
-            border: 4px solid #fbc02d;
+            border: 3px solid #fbc02d;
+            position: relative;
         }
         .header {
-            font-size: 1.4rem;
-            font-weight: bold;
+            font-size: 1.2rem;
+            font-weight: 900;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 25px;
-            border-bottom: 1px solid #444;
-            padding-bottom: 15px;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
             color: #fbc02d;
-        }
-        .player-info {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 25px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 15px;
         }
         .player-img {
-            width: 160px;
-            height: 160px;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
-            border: 5px solid #388e3c;
+            border: 4px solid #fbc02d;
             object-fit: cover;
             margin-bottom: 15px;
-            background-color: #333;
+            box-shadow: 0 0 15px rgba(251, 192, 45, 0.4);
         }
-        .score-display {
-            background-color: #1a1a1a;
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 20px;
+        .score-box {
+            background: linear-gradient(145deg, #1a1a1a, #000000);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 20px 0;
+            border: 1px solid #333;
         }
         #runs {
             font-size: 4.5rem;
             font-weight: 900;
             color: #fbc02d;
+            text-shadow: 0 0 10px rgba(251, 192, 45, 0.5);
         }
         .wickets {
             font-size: 2.5rem;
+            color: #666;
+        }
+        #commentary {
+            font-size: 0.9rem;
             color: #888;
+            font-style: italic;
+            margin-top: 10px;
         }
         #victory-message {
             display: none;
             background-color: #fbc02d;
-            color: #111;
+            color: #000;
             padding: 20px;
-            border-radius: 10px;
+            border-radius: 12px;
             font-weight: bold;
             margin-top: 20px;
+            border: 2px solid white;
         }
         code {
             display: block;
             margin-top: 10px;
-            font-family: 'Courier New', monospace;
-            background: rgba(0,0,0,0.8);
+            background: #000;
+            color: #00ff00;
             padding: 10px;
-            color: #fff;
+            font-family: 'Courier New', monospace;
             border-radius: 5px;
+            font-size: 0.85rem;
         }
     </style>
 </head>
 <body>
 
 <div class="scoreboard">
-    <div class="header">LIVE UPDATES - KNULL TEAM</div>
-    <div class="player-info">
-        <img src="https://www.hindustantimes.com/ht-img/img/2023/11/15/1600x900/virat_kohli_1700045714241_1700045722334.jpg" alt="Virat Kohli" class="player-img">
-        <h3>Virat Kohli</h3>
-        <p style="color: #aaa;">IND v AUS (Test Match)</p>
-    </div>
+    <div class="header">KNULL TEAM • LIVE</div>
     
-    <div class="score-display">
+    <img src="https://www.hindustantimes.com/ht-img/img/2023/11/15/1600x900/virat_kohli_1700045714241_1700045722334.jpg" alt="Virat Kohli" class="player-img">
+    
+    <h2 style="margin:0; font-size: 1.8rem;">Virat Kohli</h2>
+    <p style="margin:5px 0; color:#aaa; font-size:0.9rem;">IND vs AUS (Test Series)</p>
+
+    <div class="score-box">
         <span id="runs">97</span><span class="wickets">/4</span>
     </div>
-    
-    <p id="commentary" style="color: #888; font-style: italic;">Stuck on 97... pressure is on!</p>
-    
+
+    <p id="commentary">He’s looking solid, but can he find the gap?</p>
+
     <div id="victory-message">
-        KING KOHLI REIGNS! 👑<br>
-        <code id="flag-text"></code>
+        KING KOHLI REIGNS SUPREME! 👑
+        <code id="flag-display"></code>
     </div>
 </div>
 
 <script>
-(function() {
-    'use strict';
-    let _0xs = 97;
-    const _0xf = "PSNACET{V1r4t_1s_g04t_u_kn0w}";
-    
-    setInterval(() => {
-        document.getElementById('runs').innerText = _0xs;
-        if (_0xs >= 100) {
-            document.getElementById('flag-text').innerText = _0xf; 
-            document.getElementById('victory-message').style.display = "block";
-            document.getElementById('commentary').innerText = "Century Completed! 👑";
-        }
-    }, 1000);
+    (function() {
+        // Obfuscated Score variable
+        let _kS = 97;
+        const _fG = "PSNACET{V1r4t_1s_g04t_u_kn0w}";
 
-    // If they try to check the score via 'score' in console, it resets.
-    Object.defineProperty(window, 'score', {
-        get() { _0xs = 0; return "Access Denied - Score Reset!"; },
-        set(v) { _0xs = 0; }
-    });
+        const update = setInterval(() => {
+            document.getElementById('runs').innerText = _kS;
 
-    console.log("%cKNULL TEAM SECURED", "color: #fbc02d; font-size: 25px; font-weight: bold;");
-    console.log("Analyze the source to find the private variable controlling the score.");
-})();
+            if (_kS >= 100) {
+                document.getElementById('flag-display').innerText = _fG;
+                document.getElementById('victory-message').style.display = "block";
+                document.getElementById('commentary').innerText = "CENTURY COMPLETED!";
+                clearInterval(update);
+            }
+        }, 1000);
+
+        // Security: Reset if they try to access 'score' directly
+        Object.defineProperty(window, 'score', {
+            get() { _kS = 0; return "Security Reset: Score is now 0"; },
+            set(val) { _kS = 0; }
+        });
+
+        console.log("%cKNULL TEAM SECURED", "color: #fbc02d; font-size: 20px; font-weight: bold;");
+        console.log("Welcome to the ground. The scoreboard is controlled by a private variable. Find it and set it to 100.");
+    })();
 </script>
 
 </body>
