@@ -5,8 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Knull Cricket Ground - LIVE</title>
     <style>
-        body, html { height: 100%; margin: 0; font-family: sans-serif; display: flex; justify-content: center; align-items: center; overflow: hidden; background-color: #000; }
-        .bg-image { position: fixed; left: 0; right: 0; z-index: -1; display: block; background-image: url('virat.jpg'); width: 100%; height: 100%; background-size: cover; background-position: center; filter: blur(8px) brightness(0.3); transform: scale(1.1); }
+        body, html { height: 100%; margin: 0; font-family: sans-serif; display: flex; justify-content: center; align-items: center; overflow: hidden; background-color: #2e7d32; }
+        /* Background Layer */
+        .bg-image { 
+            position: fixed; left: 0; right: 0; z-index: -1; display: block; 
+            background-image: url('viratt.jpg'); /* Fixed filename with double 't' */
+            width: 100%; height: 100%; background-size: cover; background-position: center; 
+            filter: blur(8px) brightness(0.3); transform: scale(1.1); 
+        }
         .scoreboard { background-color: rgba(18, 18, 18, 0.9); width: 420px; padding: 35px; border-radius: 20px; box-shadow: 0 20px 50px rgba(0,0,0,0.9); text-align: center; border: 3px solid #fbc02d; backdrop-filter: blur(10px); }
         .player-img { width: 150px; height: 150px; border-radius: 50%; border: 4px solid #fbc02d; object-fit: cover; margin-bottom: 15px; }
         #runs { font-size: 4.5rem; font-weight: 900; color: #fbc02d; }
@@ -18,12 +24,11 @@
 <div class="bg-image"></div>
 <div class="scoreboard">
     <div style="font-weight:900; color:#fbc02d; letter-spacing:2px; margin-bottom:20px;">KNULL TEAM • LIVE</div>
-    <img src="viratt.jpg" alt="Virat Kohli" class="player-img">
-    <h2 style="margin:0; color:white;">Virat Kohli</h2>
+    <img src="viratt.jpg" alt="Virat Kohli" class="player-img"> <h2 style="margin:0; color:white;">Virat Kohli</h2>
     <div style="background:rgba(0,0,0,0.6); padding:25px; border-radius:15px; margin:20px 0; border:1px solid #333;">
         <span id="runs">97</span><span style="font-size:2.5rem; color:#666;">/4</span>
     </div>
-    <p id="commentary" style="color:#888; font-style:italic;">Analyzing stadium data...</p>
+    <p id="commentary" style="color:#888; font-style:italic;">Can he reach the milestone?</p>
     <div id="victory-message">
         KING KOHLI REIGNS SUPREME! 👑
         <code id="flag-display"></code>
@@ -31,6 +36,7 @@
 </div>
 
 <script>
+    /* Obfuscated Logic to hide the flag */
     (function(_0x1b2f,_0x4c2e){const _0x3a1d=function(_0x2d1f){while(--_0x2d1f){_0x1b2f['push'](_0x1b2f['shift']());}};_0x3a1d(++_0x4c2e);}(['innerText','PSNACET{V1r4t_1s_g04t_u_kn0w}','930432pYpXAn','flag-display','1397067zLntmH','1567632SReVzX','97','692348xSAsiI','157640YvDByw','1413867mZpPjG','100','victory-message','display','style','block','829815vjHInO','runs','902194ZasWov'],0x9378f));const _0x43a1=function(_0x264177,_0x367e91){_0x264177=_0x264177-0x177;let _0x1b2fd4=_0x1b2f[_0x264177];return _0x1b2fd4;};let _0x510f=parseInt(_0x43a1(0x17d));setInterval(()=>{document['getElementById'](_0x43a1(0x187))[_0x43a1(0x177)]=_0x510f;if(_0x510f>=parseInt(_0x43a1(0x181))){document['getElementById'](_0x43a1(0x17a))[_0x43a1(0x177)]=_0x43a1(0x178);document['getElementById'](_0x43a1(0x182))[_0x43a1(0x184)][_0x43a1(0x183)]=_0x43a1(0x185);}},0x3e8);
 </script>
 </body>
