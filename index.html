@@ -96,7 +96,7 @@
 <div class="scoreboard">
     <div class="header">KNULL TEAM • LIVE</div>
     
-    <img src="https://www.hindustantimes.com/ht-img/img/2023/11/15/1600x900/virat_kohli_1700045714241_1700045722334.jpg" alt="Virat Kohli" class="player-img">
+    <img src="virat.jpg" alt="Virat Kohli" class="player-img">
     
     <h2 style="margin:0; font-size: 1.8rem;">Virat Kohli</h2>
     <p style="margin:5px 0; color:#aaa; font-size:0.9rem;">IND vs AUS (Test Series)</p>
@@ -115,7 +115,7 @@
 
 <script>
     (function() {
-        // Obfuscated Score variable
+        // Obfuscated Score variable for the CTF
         let _kS = 97;
         const _fG = "PSNACET{V1r4t_1s_g04t_u_kn0w}";
 
@@ -130,14 +130,14 @@
             }
         }, 1000);
 
-        // Security: Reset if they try to access 'score' directly
+        // Security check for the challenge
         Object.defineProperty(window, 'score', {
             get() { _kS = 0; return "Security Reset: Score is now 0"; },
             set(val) { _kS = 0; }
         });
 
         console.log("%cKNULL TEAM SECURED", "color: #fbc02d; font-size: 20px; font-weight: bold;");
-        console.log("Welcome to the ground. The scoreboard is controlled by a private variable. Find it and set it to 100.");
+        console.log("Analyze the source to find the private variable controlling the score.");
     })();
 </script>
 
